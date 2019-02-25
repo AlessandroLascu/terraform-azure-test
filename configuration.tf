@@ -21,5 +21,5 @@ resource "azurerm_subnet" "AZ-SUB-10-50-1-FRONT-END" {
   address_prefix       = "10.50.1.0/24"
   virtual_network_name = "AZ-VNET-10-50"
   resource_group_name  = "AZ-TF-RG"
-  depends_on           = ["azurerm_virtual_network.vnet-10-50"]
+  #depends_on           = ["azurerm_virtual_network.vnet-10-50"]
 }
