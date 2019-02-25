@@ -14,8 +14,6 @@ resource "azurerm_virtual_network" "vnet-10-50" {
   name                = "AZ-VNET-10-50"
   address_space       = ["10.50.0.0/16"]
   depends_on          = ["azurerm_resource_group.resource_group_name_prod"]
-
-  #dns_servers         = ["192.168.86.4", "172.16.2.50"]
 }
 
 resource "azurerm_subnet" "AZ-SUB-10-50-1-FRONT-END" {
