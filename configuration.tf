@@ -6,6 +6,10 @@ provider "azurerm" {
 resource "azurerm_resource_group" "resource_group_name_prod" {
   name     = "AZ-TF-RG"
   location = "West Europe"
+  tags {
+    environment = "Production"
+    provisioning = "Terraform"
+  }
 }
 
 resource "azurerm_virtual_network" "vnet-10-50" {
@@ -14,6 +18,10 @@ resource "azurerm_virtual_network" "vnet-10-50" {
   name                = "AZ-VNET-10-50"
   address_space       = ["10.50.0.0/16"]
   depends_on          = ["azurerm_resource_group.resource_group_name_prod"]
+  tags {
+    environment = "Production"
+    provisioning = "Terraform"
+  }
 }
 
 resource "azurerm_subnet" "AZ-SUB-10-50-1-FRONT-END" {
