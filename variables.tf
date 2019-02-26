@@ -22,6 +22,13 @@ variable "back_end_subnet_cidr" {
   description = "CIDR block for Back End Subnet"
 }
 
+variable "demo_vm_name" {
+  description = "Name for demo VM"
+}
+variable "demo_vm_size" {
+  description = "Size for demo VM"
+}
+
 variable "vm_username" {
   description = "Enter admin username"
 }
