@@ -22,6 +22,10 @@ variable "back_end_subnet_cidr" {
   description = "CIDR block for Back End Subnet"
 }
 
+variable "storage_account_name" {
+  description = "Name for the Storage Account"
+}
+
 variable "demo_vm_name" {
   description = "Name for demo VM"
 }

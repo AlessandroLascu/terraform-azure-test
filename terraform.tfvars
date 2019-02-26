@@ -10,3 +10,5 @@ back_end_subnet_cidr = "10.50.2.0/24"
 
 demo_vm_name = "TF-VM-01"
 demo_vm_size = "Standard_DS1_v2"
+
+storage_account_name = "tfdemostorestd" # globally unique name
