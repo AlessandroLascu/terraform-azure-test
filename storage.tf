@@ -8,7 +8,7 @@ resource "azurerm_storage_account" "terraform_rg_std_storage_account" {
   account_replication_type = "LRS"
 
   tags {
+    group       = "Terraform"
     environment = "Production"
-    provisioning = "Terraform"
   }
 }

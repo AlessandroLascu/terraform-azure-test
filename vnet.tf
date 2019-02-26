@@ -4,4 +4,9 @@ resource "azurerm_virtual_network" "vnet-10-50" {
   name                = "${var.vnet_name}"
   address_space       = ["${var.vnet_cidr}"]
 
+  tags {
+    group       = "Terraform"
+    environment = "Production"
+  }
+
 }

@@ -16,7 +16,8 @@ resource "azurerm_network_security_group" "allow_RDP_nsg" {
   }
 
   tags {
-    group = "Terraform"
+    group       = "Terraform"
+    environment = "Production"
   }
 }
 
