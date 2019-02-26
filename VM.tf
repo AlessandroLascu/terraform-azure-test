@@ -37,8 +37,8 @@ resource "azurerm_virtual_machine" "TF-VM-01-VM" {
   location              = "West Europe"
   resource_group_name   = "AZ-TF-RG"
   network_interface_ids = ["${azurerm_network_interface.TF-VM-01_nic.id}"]
-  #vm_size               = "Standard_DS1_v2"
-  vm_size               = "Standard_DS2_v2"
+  vm_size               = "Standard_DS1_v2"
+  #vm_size               = "Standard_DS2_v2"
 
   # This will delete the OS disk and data disk automatically when deleting the VM
   delete_os_disk_on_termination = true
