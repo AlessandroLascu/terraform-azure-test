@@ -1,19 +1,30 @@
-/* # NICs
+# NICs
+resource "azurerm_public_ip" "TF-VM-01_pip" {
+  name                         = "TF-VM-01-PIP"
+  location                     = "West Europe"
+  resource_group_name          = "AZ-TF-RG"
+  public_ip_address_allocation = "dynamic"
+
+  tags {
+    group       = "Terraform"
+    environment = "Production"
+  }
+}
+
 resource "azurerm_network_interface" "TF-VM-01_nic" {
   name                = "TF-VM-01-NIC"
   location            = "West Europe"
   resource_group_name = "AZ-TF-RG"
-
-  #network_security_group_id = "${azurerm_network_security_group.allow_RDP_nsg.id}"
+  network_security_group_id = "${azurerm_network_security_group.allow_RDP_nsg.id}"
 
   ip_configuration {
-    name                          = "TF-VM-01-Private"
+    name                          = "TF-VM-01-Primary"
     subnet_id                     = "${azurerm_subnet.AZ-SUB-10-50-1-FRONT-END.id}"
     private_ip_address_allocation = "static"
     private_ip_address            = "10.50.1.4"
-
-    # public_ip_address_id 	  = "${azurerm_public_ip.TF-VM-01_pip.id}"
+    public_ip_address_id 	        = "${azurerm_public_ip.TF-VM-01_pip.id}"
   }
+
   tags {
     group       = "Terraform"
     environment = "Production"
@@ -65,4 +76,4 @@ resource "azurerm_virtual_machine" "TF-VM-01-VM" {
     environment = "Production"
     provisioning = "Terraform"
   }
-} */
+}
