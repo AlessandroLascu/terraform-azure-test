@@ -3,7 +3,7 @@ resource "azurerm_public_ip" "TF-VM-01_pip" {
   name                         = "TF-VM-01-PIP"
   location                     = "West Europe"
   resource_group_name          = "AZ-TF-RG"
-  public_ip_address_allocation = "dynamic"
+  allocation_method            = "dynamic"
 
   tags {
     group       = "Terraform"
@@ -63,8 +63,8 @@ resource "azurerm_virtual_machine" "TF-VM-01-VM" {
   # OS PROFILE
   os_profile {
     computer_name  = "TF-VM-01"
-    admin_username = "${var.vm_username}"
-    admin_password = "${var.vm_password}"
+    admin_username = "azlocal"
+    admin_password = "Azl0cal$"
   }
 
   os_profile_windows_config {
