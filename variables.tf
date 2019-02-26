@@ -1,3 +1,11 @@
+variable "subscription_id" {
+  description = "Subscription ID"
+}
+
+variable "tenant_id" {
+  description = "Tenant ID"
+}
+
 variable "location" {
   description = "The default Azure region for the resource provisioning"
 }
@@ -23,7 +31,7 @@ variable "back_end_subnet_cidr" {
 }
 
 variable "storage_account_name" {
-  description = "Name for the Storage Account"
+  description = "Name for the Storage Account. N.B. must be globally unique."
 }
 
 variable "demo_vm_name" {
