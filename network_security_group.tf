@@ -1,10 +1,10 @@
-/* resource "azurerm_network_security_group" "azeu_allowrdp_nsg" {
-  name                = "AZEU-NSG-AllowRDP"
+resource "azurerm_network_security_group" "allow_RDP_nsg" {
+  name                = "AllowRDP-NSG"
   location            = "West Europe"
-  resource_group_name = "${azurerm_resource_group.terraform_rg_prod.name}"
+  resource_group_name = "AZ-TF-RG"
 
   security_rule {
-    name                       = "AllowRDP"
+    name                       = "Allow_RDP"
     priority                   = 1000
     direction                  = "Inbound"
     access                     = "Allow"
@@ -16,7 +16,8 @@
   }
 
   tags {
-    group = "Terraform"
+    environment = "Production"
+    provisioning = "Terraform"
   }
-} */
+}
 
