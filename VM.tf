@@ -3,7 +3,7 @@ resource "azurerm_public_ip" "TF-VM-01_pip" {
   name                         = "TF-VM-01-PIP"
   location                     = "West Europe"
   resource_group_name          = "AZ-TF-RG"
-  allocation_method            = "dynamic"
+  allocation_method            = "Dynamic"
 
   tags {
     group       = "Terraform"
@@ -20,8 +20,8 @@ resource "azurerm_network_interface" "TF-VM-01_nic" {
   ip_configuration {
     name                          = "TF-VM-01-Primary"
     subnet_id                     = "${azurerm_subnet.AZ-SUB-10-50-1-FRONT-END.id}"
-    private_ip_address_allocation = "static"
-    private_ip_address            = "10.50.1.4"
+    private_ip_address_allocation = "dynamic"
+    # private_ip_address            = "10.50.1.4"
     public_ip_address_id 	        = "${azurerm_public_ip.TF-VM-01_pip.id}"
   }
 
@@ -37,7 +37,8 @@ resource "azurerm_virtual_machine" "TF-VM-01-VM" {
   location              = "West Europe"
   resource_group_name   = "AZ-TF-RG"
   network_interface_ids = ["${azurerm_network_interface.TF-VM-01_nic.id}"]
-  vm_size               = "Standard_DS1_v2"
+  #vm_size               = "Standard_DS1_v2"
+  vm_size               = "Standard_DS2_v2"
 
   # This will delete the OS disk and data disk automatically when deleting the VM
   delete_os_disk_on_termination = true
