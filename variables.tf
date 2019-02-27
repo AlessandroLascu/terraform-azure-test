@@ -14,7 +14,7 @@ variable "terraform_rg_prod" {
   description = "Resource group for Production environment"
 }
 
-variable "vnet_name" {
+/* variable "vnet_name" {
   description = "Name for Virtual Network"
 }
 
@@ -28,6 +28,16 @@ variable "front_end_subnet_cidr" {
 
 variable "back_end_subnet_cidr" {
   description = "CIDR block for Back End Subnet"
+} */
+
+variable "vnet_info" {
+  type        = "map"
+  description = "Block for Virtual Network definition, specifying name and CIDR"
+}
+
+variable "subnet_info" {
+  type        = "map"
+  description = "Block for subnets definition, specifying prefixes and names"
 }
 
 variable "storage_account_name" {
