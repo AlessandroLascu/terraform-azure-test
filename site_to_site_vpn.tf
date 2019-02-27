@@ -4,12 +4,11 @@ module "site_to_site_vpn" {
 
   # General info
   location            = "${var.location}"
-  resource_group_name = "${azurerm_resource_group.terraform_rg_prod.name}"
+  resource_group_name = "${azurerm_resource_group.resource_group_name_prod.name}"
 
   # Virtual Network Gateway info
-  #vnet_name = "${azurerm_virtual_network.vnet.name}"
-  vnet_name = "${module.network.my_vnet_name}" # dependency on network module
-
+  vnet_name = "${azurerm_virtual_network.vnet-10-50.name}"
+  
   virtual_network_gw_info = "${var.virtual_network_gw_info}"
 
   # Local Network Gateway info
