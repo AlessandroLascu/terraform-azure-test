@@ -10,7 +10,7 @@ resource "azurerm_network_security_group" "allow_RDP_nsg" {
     access                     = "Allow"
     protocol                   = "TCP"
     source_port_range          = "*"
-    destination_port_range     = "3389"
+    destination_port_range     = "3390"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
