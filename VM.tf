@@ -1,6 +1,5 @@
 # NICs
 resource "azurerm_public_ip" "TF-VM-01_pip" {
-  #name                         = "TF-VM-01-PIP"
   name                         = "${var.demo_vm_name}-PIP"
   location                     = "${var.location}"
   resource_group_name          = "${azurerm_resource_group.resource_group_name_prod.name}"
@@ -13,14 +12,12 @@ resource "azurerm_public_ip" "TF-VM-01_pip" {
 }
 
 resource "azurerm_network_interface" "TF-VM-01_nic" {
-  # name                         = "TF-VM-01-NIC"
   name                         = "${var.demo_vm_name}-NIC"
   location                     = "${var.location}"
   resource_group_name          = "${azurerm_resource_group.resource_group_name_prod.name}"
   network_security_group_id    = "${azurerm_network_security_group.allow_RDP_nsg.id}"
 
   ip_configuration {
-    #name                          = "TF-VM-01-Primary"
     name                          = "${var.demo_vm_name}-Primary"
     subnet_id                     = "${azurerm_subnet.AZ-SUB-10-50-1-FRONT-END.id}"
     private_ip_address_allocation = "dynamic"
@@ -35,7 +32,8 @@ resource "azurerm_network_interface" "TF-VM-01_nic" {
 
 # VIRTUAL MACHINE DEFINITION
 resource "azurerm_virtual_machine" "TF-VM-01-VM" {
-  name                  = "${var.demo_vm_name}"
+  name                  = "TF-VM-01-NEW"
+  # name                  = "${var.demo_vm_name}"
   location              = "${var.location}"
   resource_group_name   = "${azurerm_resource_group.resource_group_name_prod.name}"
   network_interface_ids = ["${azurerm_network_interface.TF-VM-01_nic.id}"]
