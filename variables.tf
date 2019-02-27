@@ -51,10 +51,10 @@ variable "demo_vm_size" {
   description = "Size for demo VM"
 }
 
-variable "vm_username" {
+variable "demo_vm_username" {
   description = "Enter admin username"
 }
 
-variable "vm_password" {
+variable "demo_vm_password" {
   description = "Enter admin password"
 }

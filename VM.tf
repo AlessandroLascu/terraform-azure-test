@@ -66,8 +66,8 @@ resource "azurerm_virtual_machine" "TF-VM-01-VM" {
   # OS PROFILE
   os_profile {
     computer_name  = "${var.demo_vm_name}"
-    admin_username = "${var.vm_username}"
-    admin_password = "${var.vm_password}"
+    admin_username = "${var.demo_vm_username}"
+    admin_password = "${var.demo_vm_password}"
   }
 
   os_profile_windows_config {

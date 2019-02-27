@@ -29,3 +29,5 @@ storage_account_name = "tfdemostorestd" # globally unique name
 
 demo_vm_name = "TF-VM-01"
 demo_vm_size = "Standard_DS1_v2"
+demo_vm_username = "azlocal"
+demo_vm_password = "Azure_local!"
