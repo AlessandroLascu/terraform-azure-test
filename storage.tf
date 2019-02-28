@@ -1,5 +1,6 @@
 # STORAGE ACCOUNT
 resource "azurerm_storage_account" "terraform_rg_std_storage_account" {
+  #name                     = "test"                 # unique name
   name                     = "tfdemostorestd"                 # unique name
   resource_group_name      = "AZ-TF-RG"
   location                 = "West Europe"  
