@@ -11,6 +11,9 @@ vnet_info = {
   "dns_servers" = "10.40.9.4,172.16.2.50"
 }
 
+#front_end_subnet_name = "AZ-SUB-10-50-1-FRONT-END"
+
+
 subnet_info = {
  
     "front_end" = {
