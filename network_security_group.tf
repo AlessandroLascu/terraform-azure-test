@@ -3,7 +3,7 @@ resource "azurerm_network_security_group" "allow_RDP_nsg" {
   location            = "${var.location}"
   resource_group_name = "${azurerm_resource_group.resource_group_name_prod.name}"
 
-  security_rule {
+/*   security_rule {
     name                       = "Allow_RDP"
     priority                   = 1000
     direction                  = "Inbound"
@@ -11,6 +11,18 @@ resource "azurerm_network_security_group" "allow_RDP_nsg" {
     protocol                   = "TCP"
     source_port_range          = "*"
     destination_port_range     = "3389"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  } */
+
+  security_rule {
+    name                       = "Allow_HTTPS"
+    priority                   = 800
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "TCP"
+    source_port_range          = "*"
+    destination_port_range     = "443"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }

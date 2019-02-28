@@ -26,6 +26,11 @@ subnet_info = {
         "cidr" = "10.50.2.0/24"
     } 
 
+    "data" = {
+        "name"   = "AZ-SUB-10-50-3-DATA"
+        "cidr" = "10.50.3.0/24"
+    }
+
 }
 
 storage_account_name = "tfdemostorestd" # globally unique name
